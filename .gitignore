@@ -1,0 +1,23 @@
+# IDE File/Folders
+.DS_Store
+.idea
+
+# Prod Compiling Folders
+tmp
+.tmp
+
+# Modules Folders
+bower_components
+node_modules
+
+# Config Folders
+config/local.js
+config/env/*
+assets/config.js
+
+# Debug Files
+*.log
+*.out
+*.pid
+npm-debug.log
+CONSTANTS.js

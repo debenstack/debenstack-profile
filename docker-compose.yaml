@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+
+    # ==== PROFILE WEBSITE STACK ====
+    profile:
+        container_name: bensoer_profile_site_container
+        build: .
+        image: bensoer_profile_site_image
+        ports:
+            - 127.0.0.1:8080:8050
+        volumes:
+            - .:/app
+            # - ./dockerconf/generated
