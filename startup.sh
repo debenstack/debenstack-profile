@@ -1,6 +1,6 @@
 npm install -g bower
 cd assets
-bower install --allow-root
+bower --allow-root install 
 cd ..
 npm install
 node app.js
