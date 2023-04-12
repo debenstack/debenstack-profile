@@ -12,80 +12,95 @@ import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
 import TagIcon from '@mui/icons-material/Tag';
 import ListEntryComponent from './components/ListEntryComponent';
 import ContactEntryComponent from './components/ContactEntryComponent';
+import ExploreIcon from '@mui/icons-material/Explore';
+import ContactSectionComponent from './components/ContactSectionComponent';
+import ResponsiveAvatarComponent from './components/ResponsiveAvatarComponent';
+import { BsMedium } from 'react-icons/bs';
 
 function App() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ marginTop: '50px'}}>
       <Stack spacing={2}>
             <Grid container spacing={2} justifyContent="center" alignItems="center">
                   <Grid item xs={12} zeroMinWidth>
                     <Typography variant='h1' align='center'>
                       Hi! I'm Ben
                     </Typography>
-                    
                   </Grid>
                   
             </Grid>
-            <Grid container spacing={4}>
-              <Grid item xs={4}>
-                  <Stack spacing={2}>
-                    
-                    <Container>
-                      <Avatar
+            <Grid container rowGap={3}>
+              <Grid item xs={12} md={4} zeroMinWidth>
+                <Container>
+                  <Stack spacing={4}>
+
+                      <ResponsiveAvatarComponent 
                         alt="Ben Soer"
                         src="DSC_5839-1.jpg"
-                        sx={{ width: 200, height: 200}}
+                        sx={{  
+                          width: {
+                              xs: '250px',
+                          },
+                          height: {
+                              xs: 'auto',
+                          }
+                        }} 
                       />
-                      <List>
-                          <ContactEntryComponent listItemText='ben@soernet.ca'>
-                            <AlternateEmailIcon/> 
-                          </ContactEntryComponent>
-                          <ContactEntryComponent listItemText='604.842.2274'>
-                            <TagIcon/>
-                          </ContactEntryComponent>
-                      </List>
-                    </Container>
-                    
+
+                      <ContactSectionComponent>
+                        <ContactEntryComponent text='ben@soernet.ca'>
+                          <AlternateEmailIcon color='action'/> 
+                        </ContactEntryComponent>
+                        <ContactEntryComponent text='604.842.2274'>
+                          <TagIcon color='action' /> 
+                        </ContactEntryComponent>
+                      </ContactSectionComponent>
 
                   </Stack>
+                </Container>
               </Grid>
-              <Grid item xs={8} zeroMinWidth>
+              <Grid item xs={12} md={8} zeroMinWidth>
                 <Container>
-                  <Stack spacing={2}>
+                  <Stack 
+                    spacing={{
+                      xs: 2,
+                      md: 2
+                    }} >
                     
-
-                    <Typography >
-                      I'm a software developer, musician, photographer and outdoor enthusiast. I like living a life with
-                      meaning and building and creating things with meaning. With that, I also like teaching and showing the many things I have 
-                      learned along the way with others!
+                    <Typography>
+                      I'm a DevOps Engineer, Musician, Photographer and Outdoor Enthusiast. I love to dabble and explore.
+                      I am especially fond of creatings things that make life easier, fun or bring more value and purpose to it. With that, 
+                      I also like teaching and showing the many things I have found and learned along the way!
                     </Typography>
-
-
+                    
                     <Typography variant='h6'>
                       Learn More About Me:
                     </Typography>
 
-                    <ListEntryComponent elevation={1} listItemText={'Github'} >
-                      <GitHubIcon/>
-                    </ListEntryComponent>
-                    <ListEntryComponent elevation={1} listItemText={'LinkedIn'} >
+                    <ListEntryComponent elevation={1} listItemText={'LinkedIn'} url='https://www.linkedin.com/in/ben-soer-24a541b0'>
                       <LinkedInIcon/>
                     </ListEntryComponent>
-                    <ListEntryComponent elevation={1} listItemText={'Technical Blog'} >
+                    <ListEntryComponent elevation={1} listItemText={'Github'} url='https://github.com/bensoer'>
+                      <GitHubIcon/>
+                    </ListEntryComponent>
+                    <ListEntryComponent elevation={1} listItemText={'Technical Blog'}  url='https://blog.bensoer.com'>
                       <BookIcon/>
                     </ListEntryComponent>
-                    <ListEntryComponent elevation={1} listItemText={'Wiki'} >
+                    <ListEntryComponent elevation={1} listItemText={'Medium Blog'} url='https://medium.com/@bensoer'>
+                      <BsMedium/>
+                    </ListEntryComponent>
+                    <ListEntryComponent elevation={1} listItemText={'Wiki'} url='https://wiki.bensoer.com'>
                       <InfoIcon/>
                     </ListEntryComponent>
-                    <ListEntryComponent elevation={1} listItemText={'Photography'} >
+                    <ListEntryComponent elevation={1} listItemText={'Photography Portfolio'} url='https://photos.bensoer.com'>
                       <PhotoCameraIcon/>
+                    </ListEntryComponent>
+                    <ListEntryComponent elevation={1} listItemText={'Mountain Adventure House Wiki'} url='https://mac.projectterris.com'>
+                      <ExploreIcon/>
                     </ListEntryComponent>
                     
                   </Stack>
                 </Container>
-                
-
-
                 
               </Grid>
             </Grid>
