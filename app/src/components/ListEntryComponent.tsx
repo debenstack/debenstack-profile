@@ -18,6 +18,9 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
 
     // onHover - set the elevation to onHoverElevation prop value
 
+    private readonly defaultElevation = 1
+    private readonly defaultHoverElevation = 12
+
     constructor(props: ListEntryProps){
         super(props)
         this.state = {
@@ -28,13 +31,13 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
 
     componentDidMount = () => {
         this.setState({
-            currentElevation: this.props.elevation ?? 1
+            currentElevation: this.props.elevation ?? this.defaultElevation
         })
     }
 
     handleOnMouseEnter = () => {
         this.setState({
-            currentElevation: this.props.onHoverElevation ?? 5,
+            currentElevation: this.props.onHoverElevation ?? this.defaultHoverElevation,
             secondaryAction: (
                 <ArrowForwardIosIcon/>
             )
@@ -44,7 +47,7 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
 
     handleOnMouseLeave = () => {
         this.setState({
-            currentElevation: this.props.elevation ?? 1,
+            currentElevation: this.props.elevation ?? this.defaultElevation,
             secondaryAction: undefined
         })
 
