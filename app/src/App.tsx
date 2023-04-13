@@ -44,8 +44,9 @@ function App() {
                                 },
                                 height: {
                                     xs: 'auto',
-                                }
-                              }} 
+                                },
+                                border: '4px solid black'
+                              }}
                             />
 
                             <ContactSectionComponent>
