@@ -1,0 +1,9 @@
+{
+  "short_name": "Ben Soer",
+  "name": "Ben Soer Profile Website",
+  "icons": [],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
