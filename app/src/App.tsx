@@ -1,7 +1,4 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { Avatar, Box, Card, CardContent, Container, Grid, List, ListItem, ListItemAvatar, ListItemIcon, ListItemText, Paper, Typography } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import { Stack } from '@mui/system';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';

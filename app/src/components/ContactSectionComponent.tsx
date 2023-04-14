@@ -1,5 +1,4 @@
-import { Card, CardContent, Container, Grid, Paper, Stack, Typography } from "@mui/material";
-import AlternateEmailIcon from '@mui/icons-material/AlternateEmail';
+import { Paper, Stack } from "@mui/material";
 
 interface ContactSectionComponentProps {
 

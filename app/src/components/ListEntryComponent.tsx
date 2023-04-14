@@ -1,4 +1,4 @@
-import { Box, List, ListItem, ListItemIcon, ListItemText, Paper } from "@mui/material";
+import { List, ListItem, ListItemIcon, ListItemText, Paper } from "@mui/material";
 import React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
@@ -54,7 +54,6 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
     }
 
     handleOnClick = () => {
-        console.log(`Attempting To Opening ${this.props.url}`)
         if(this.props.url !== undefined){
             window.open(this.props.url, "_blank", 'noopener,noreferrer')
         }
@@ -63,12 +62,14 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
     render(): React.ReactNode {
         return (
 
-            <Paper elevation={this.state.currentElevation} onMouseOver={this.handleOnMouseEnter} onMouseLeave={this.handleOnMouseLeave} onClick={this.handleOnClick}>
+            <Paper 
+                elevation={this.state.currentElevation} 
+                onMouseOver={this.handleOnMouseEnter} 
+                onMouseLeave={this.handleOnMouseLeave} 
+                onClick={this.handleOnClick}
+            >
                 <List>
-                    <ListItem
-                        secondaryAction={this.state.secondaryAction}
-                    >
-                    
+                    <ListItem secondaryAction={this.state.secondaryAction}>
                         <ListItemIcon>
                             {this.props.children}
                         </ListItemIcon>

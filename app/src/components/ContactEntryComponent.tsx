@@ -1,4 +1,4 @@
-import { Grid, List, ListItem, ListItemIcon, ListItemText, Paper, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 
 export interface ContactEntryProps {
     text: string
