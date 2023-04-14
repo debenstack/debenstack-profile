@@ -1,7 +1,11 @@
 name: 'Build And Publish Latest'
 on:
   push:
-    branches: ['master']
+    branches:
+      - 'master'
+    tags:
+      - 'v*.*.*'
+
 
 env:
   REGISTRY: ghcr.io
@@ -31,6 +35,18 @@ jobs:
           uses: docker/metadata-action@v4.3.0
           with:
             images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+            tags: |
+              type=schedule
+              type=semver,pattern={{version}}
+              type=semver,pattern={{major}}.{{minor}}
+              type=semver,pattern={{major}}
+              type=ref,event=branch
+              type=ref,event=pr
+              type=sha
+            labels: |
+              org.opencontainers.image.title=debenstack-profile
+              org.opencontainers.image.description=Debenstack Profile Container
+              org.opencontainers.image.vendor=debenstack
         
         - name: Build and push Docker image
           uses: docker/build-push-action@v4.0.0
