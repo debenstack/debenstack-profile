@@ -1,16 +1,41 @@
 name: 'Build And Publish Latest'
-on: [push]
+on:
+  push:
+    branches: ['master']
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
 
 jobs:
 
   build-and-publish-latest:
       runs-on: ubuntu-latest
-      if: github.ref == 'refs/heads/master' # Running this job only for master branch
+      permissions:
+        contents: read
+        packages: write
 
       steps:
-          - uses: actions/checkout@v2 # Checking out the repo
+        - name: Checkout Repository
+          uses: actions/checkout@v3
 
-          - name: Build and publish Docker Image to GitHub Container Registry
-            uses: TCPShield/gp-docker-action@1.1.13
-            with:
-                github-token: ${{ secrets.CLASSIC_GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+        - name: Login to Container Registery
+          uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
+          with:
+            registry: ${{ env.REGISTRY }}
+            username: ${{ github.actor }}
+            password: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Extract medata (tags, labels) for Docker
+          id: meta
+          uses: docker/metadata-action@4.3.0
+          with:
+            images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+        
+        - name: Build and push Docker image
+          uses: docker/build-push-action@4.0.0
+          with:
+            context: .
+            push: true
+            tags: ${{ steps.meta.outputs.tags }}
+            labels: ${{ steps.meta.outputs.labels }}
