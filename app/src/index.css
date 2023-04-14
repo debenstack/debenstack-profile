@@ -2,10 +2,10 @@ html {
     width: 100%;
     height: 100%;
     background: white;
-    background: -webkit-linear-gradient(165deg, rgba(123, 147, 189, 0.791), 3%, white, 94%, rgba(123, 147, 189, 0.791));
-    background: -o-linear-gradient(165deg, rgba(123, 147, 189, 0.791), 3%, white, 94%, rgba(123, 147, 189, 0.791));
-    background: -moz-linear-gradient(165deg, rgba(123, 147, 189, 0.791), 3%, white, 94%, rgba(123, 147, 189, 0.791));
-    background: linear-gradient(165deg, rgba(123, 147, 189, 0.791), 3%, white, 94%, rgba(123, 147, 189, 0.791));
+    background: -webkit-linear-gradient(165deg, rgba(119, 129, 145, 0.791), 3%, white, 94%, rgba(119, 129, 145, 0.791));
+    background: -o-linear-gradient(165deg, rgba(119, 129, 145, 0.791), 3%, white, 94%, rgba(119, 129, 145, 0.791));
+    background: -moz-linear-gradient(165deg, rgba(119, 129, 145, 0.791), 3%, white, 94%, rgba(119, 129, 145, 0.791));
+    background: linear-gradient(165deg, rgba(119, 129, 145, 0.791), 3%, white, 94%, rgba(119, 129, 145, 0.791));
     background-repeat: no-repeat;
     background-attachment: fixed;
 }

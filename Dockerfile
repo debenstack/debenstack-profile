@@ -1,10 +1,15 @@
-FROM node:lts-buster
+# Build Stage
+FROM node:lts-bullseye-slim as builder
 
 RUN mkdir /app
 WORKDIR /app
+COPY /app/ .
+RUN npm install && npm run build
 
-COPY . /app
+# Deploy Stage
+FROM nginx:stable-alpine-slim
+WORKDIR /usr/share/nginx/html
+RUN rm -rf ./*
+COPY --from=builder /app/build .
 
-ENV NODE_ENV="production"
-
-ENTRYPOINT ["/bin/bash", "./startup.sh"]
+ENTRYPOINT [ "nginx", "-g", "daemon off;" ]
