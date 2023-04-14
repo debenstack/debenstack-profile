@@ -14,5 +14,3 @@ jobs:
             uses: TCPShield/gp-docker-action@1.1.13
             with:
                 github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
-                image-name: debenstack-profile-image # Provide only Docker image name, tag will be automatically set to latest
-                dockerfile: Dockerfile_server
