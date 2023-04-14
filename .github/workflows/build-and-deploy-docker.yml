@@ -13,4 +13,4 @@ jobs:
           - name: Build and publish Docker Image to GitHub Container Registry
             uses: TCPShield/gp-docker-action@1.1.13
             with:
-                github-token: ${{ secrets.GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
+                github-token: ${{ secrets.CLASSIC_GITHUB_TOKEN }} # Provide GITHUB_TOKEN to login into the GitHub Packages
