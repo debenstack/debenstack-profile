@@ -68,7 +68,7 @@ function App() {
                           
                           <Typography>
                             I'm a DevOps Engineer, Musician, Photographer and Outdoor Enthusiast. I love to dabble and explore.
-                            I am especially fond of creatings things that make life easier, fun or bring more value and purpose to it. With that, 
+                            I am especially fond of creating things that make life easier, fun or bring more value and purpose to it. With that, 
                             I also like teaching and showing the many things I have found and learned along the way!
                           </Typography>
                           
