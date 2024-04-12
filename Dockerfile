@@ -3,7 +3,7 @@ FROM node:lts-bullseye-slim as builder
 
 RUN mkdir /app
 WORKDIR /app
-COPY /app/ .
+COPY /src/ .
 RUN npm install && npm run build
 
 # Deploy Stage
