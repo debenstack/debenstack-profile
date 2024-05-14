@@ -18,11 +18,11 @@ import { BsMedium } from 'react-icons/bs';
 function App() {
   return (
       <Container maxWidth="lg" sx={{ marginTop: '50px'}}>
-            <Stack spacing={2}>
+            <Stack spacing={2} >
                   <Grid container spacing={2} justifyContent="center" alignItems="center">
                         <Grid item xs={12} zeroMinWidth>
                           <Typography variant='h1' align='center'>
-                            Hi! I'm Ben
+                            Heyo, I'm Ben
                           </Typography>
                         </Grid>
                         
@@ -65,11 +65,11 @@ function App() {
                             xs: 2,
                             md: 2
                           }} >
-                          
+                          <Typography></Typography>
                           <Typography>
-                            I'm a DevOps Engineer, Musician, Photographer and Outdoor Enthusiast. I love to dabble and explore.
-                            I am especially fond of creating things that make life easier, fun or bring more value and purpose to it. With that, 
-                            I also like teaching and showing the many things I have found and learned along the way!
+                            I'm a DevOps Engineer, Musician, Photographer, Wannabe Car Guy and Outdoor Enthusiast.
+                            I love to learn, explore and create things that make life easier, fun, and bring more value and purpose to it. Along with that, 
+                            I enjoy teaching others of my findings, leading and providing guidance for others to grow and explore.
                           </Typography>
                           
                           <Typography variant='h6'>
