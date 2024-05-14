@@ -86,3 +86,10 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+ingress:
+  domain: bensoer.com
+  namespace: traefik
+  certificate:
+    issuer: letsencrypt-dev-cluster-issuer
+    secretName: profile-certificate-secret

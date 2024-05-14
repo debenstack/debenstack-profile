@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: profile-certificate
+  namespace: {{ .Values.ingress.namespace }}
+spec:
+  secretName: {{ .Values.ingress.certificate.secretName }}
+  dnsNames:
+    - {{ .Values.ingress.domain }}
+  issuerRef:
+    name: {{ .Values.ingress.certificate.issuer | default "letsencrypt-dev-cluster-issuer" }}
+    kind: ClusterIssuer

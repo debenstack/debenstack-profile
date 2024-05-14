@@ -1,0 +1,18 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: profile-ingress
+  namespace: {{ .Values.ingress.certificate }}
+spec:
+  entryPoints:                      # [1]
+    - websecure
+  routes:                           # [2]
+    - kind: Rule
+      match: Host(`{{ .Values.ingress.domain }}`)
+      priority: 10
+      services:
+        - name: {{ include "debenstack-profile.fullname" . }}
+          namespace: {{ .Release.Namespace }}
+          port: {{ .Values.service.port }}
+  tls:                              # [12]
+    secretName: {{ .Values.ingress.certificate.secretName }}
