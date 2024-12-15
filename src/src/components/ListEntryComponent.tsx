@@ -1,10 +1,12 @@
 import { List, ListItem, ListItemIcon, ListItemText, Paper } from "@mui/material";
 import React from "react";
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+import axios from 'axios';
 
 export interface ListEntryState {
     currentElevation: number
     secondaryAction?: React.ReactNode
+    visible: boolean
 }
 
 export interface ListEntryProps {
@@ -12,6 +14,7 @@ export interface ListEntryProps {
     elevation?: number,
     onHoverElevation?: number
     url?: string
+    testDomain?: string
 }
 
 export default class ListEntryComponent extends React.Component<React.PropsWithChildren<ListEntryProps>, ListEntryState>{
@@ -25,11 +28,33 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
         super(props)
         this.state = {
             currentElevation: 1,
-            secondaryAction: undefined
+            secondaryAction: undefined,
+            visible: true
         }
     }
 
     componentDidMount = () => {
+
+        // check the url does load something
+        if( this.props.testDomain !== undefined && this.state.visible === true){
+            axios.get('https://dns.google/resolve?name=' + this.props.testDomain)
+            .then((response) => {
+
+                // If the DNS lookup of the testDomain returns no answers, don't show the link
+                if(response.data.Answer === undefined || (response.data.Answer !== undefined && response.data.Answer.length == 0)){
+                    this.setState({
+                        visible: false
+                    })
+                }
+            })
+            .catch((err) => {
+                this.setState({
+                    visible: false
+                })
+            })
+        }
+        
+
         this.setState({
             currentElevation: this.props.elevation ?? this.defaultElevation
         })
@@ -60,26 +85,30 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
     }
 
     render(): React.ReactNode {
-        return (
-
-            <Paper 
-                elevation={this.state.currentElevation} 
-                onMouseOver={this.handleOnMouseEnter} 
-                onMouseLeave={this.handleOnMouseLeave} 
-                onClick={this.handleOnClick}
-            >
-                <List>
-                    <ListItem secondaryAction={this.state.secondaryAction}>
-                        <ListItemIcon>
-                            {this.props.children}
-                        </ListItemIcon>
-                        <ListItemText>
-                            {this.props.listItemText}
-                        </ListItemText>
-                    </ListItem>
-                </List>
-            </Paper>
-        )
+        if(this.state.visible){
+            return (
+                <Paper 
+                    elevation={this.state.currentElevation} 
+                    onMouseOver={this.handleOnMouseEnter} 
+                    onMouseLeave={this.handleOnMouseLeave} 
+                    onClick={this.handleOnClick}
+                >
+                    <List>
+                        <ListItem secondaryAction={this.state.secondaryAction}>
+                            <ListItemIcon>
+                                {this.props.children}
+                            </ListItemIcon>
+                            <ListItemText>
+                                {this.props.listItemText}
+                            </ListItemText>
+                        </ListItem>
+                    </List>
+                </Paper>
+            )
+        }else{
+            return (null)
+        }
+        
     }
     
 }
