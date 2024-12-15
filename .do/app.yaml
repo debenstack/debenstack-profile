@@ -1,0 +1,10 @@
+name: profile
+region: nyc
+static_sites:
+  - name: profile
+    git:
+      repo_clone_url: https://github.com/debenstack/debenstack-profile.git
+      branch: master
+      build_command: "npm install && npm run build"
+      source_dir: build
+      environment_slug: "node-js"
