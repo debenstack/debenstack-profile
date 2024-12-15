@@ -1,7 +1,7 @@
-name: profile
+name: profile-app
 region: nyc
 static_sites:
-  - name: profile
+  - name: profile-react
     git:
       repo_clone_url: https://github.com/debenstack/debenstack-profile.git
       branch: master
