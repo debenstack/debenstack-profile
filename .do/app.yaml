@@ -9,3 +9,7 @@ static_sites:
     source_dir: src
     output_dir: build
     environment_slug: "node-js"
+domains:
+  - domain: bensoer.com
+    type: PRIMARY
+    wildcard: false
