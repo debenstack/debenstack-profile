@@ -5,7 +5,7 @@ static_sites:
     git:
       repo_clone_url: https://github.com/debenstack/debenstack-profile.git
       branch: master
-      build_command: "npm install && npm run build"
-      source_dir: src
-      output_dir: build
-      environment_slug: "node-js"
+    build_command: "npm install && npm run build"
+    source_dir: src
+    output_dir: build
+    environment_slug: "node-js"
