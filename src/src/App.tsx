@@ -82,19 +82,19 @@ function App() {
                           <ListEntryComponent listItemText={'Github'} url='https://github.com/bensoer'>
                             <GitHubIcon/>
                           </ListEntryComponent>
-                          <ListEntryComponent listItemText={'Technical Blog'}  url='https://blog.bensoer.com'>
+                          <ListEntryComponent listItemText={'Technical Blog'}  url='https://blog.bensoer.com' testDomain='blog.bensoer.com'>
                             <BookIcon/>
                           </ListEntryComponent>
                           <ListEntryComponent listItemText={'Medium Blog'} url='https://medium.com/@bensoer'>
                             <BsMedium/>
                           </ListEntryComponent>
-                          <ListEntryComponent listItemText={'Wiki'} url='https://wiki.bensoer.com'>
+                          <ListEntryComponent listItemText={'Wiki'} url='https://wiki.bensoer.com' testDomain='wiki.bensoer.com'>
                             <InfoIcon/>
                           </ListEntryComponent>
-                          <ListEntryComponent listItemText={'Photography Portfolio'} url='https://photos.bensoer.com'>
+                          <ListEntryComponent listItemText={'Photography Portfolio'} url='https://photos.bensoer.com' testDomain='photos.bensoer.com'>
                             <PhotoCameraIcon/>
                           </ListEntryComponent>
-                          <ListEntryComponent listItemText={'Mountain Adventure House Wiki'} url='https://mac.projectterris.com'>
+                          <ListEntryComponent listItemText={'Mountain Adventure House Wiki'} url='https://mac.projectterris.com' testDomain='mac.projectterris.com'>
                             <ExploreIcon/>
                           </ListEntryComponent>
                           
@@ -104,7 +104,7 @@ function App() {
                     </Grid>
                   </Grid>
                 </Stack>
-                <Stack paddingTop={'30px'} alignItems={{ xs: 'center', md: 'left', lg: 'left'}}>
+                <Stack marginTop={'30px'} alignItems={{ xs: 'center', md: 'left', lg: 'left'}}>
                   <Typography variant="caption">
                     Copyright © {new Date().getFullYear()}. Ben Soer
                   </Typography>
