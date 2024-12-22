@@ -34,7 +34,7 @@ function App() {
 
                             <ResponsiveAvatarComponent 
                               alt="Ben Soer"
-                              src="DSC_5839-1.jpg"
+                              src="DSC_5839-1-250.jpg"
                               sx={{  
                                 width: {
                                     xs: '250px',
