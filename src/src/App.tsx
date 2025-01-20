@@ -14,6 +14,7 @@ import ContactSectionComponent from './components/ContactSectionComponent';
 import ResponsiveAvatarComponent from './components/ResponsiveAvatarComponent';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { BsMedium } from 'react-icons/bs';
+import ArticleIcon from '@mui/icons-material/Article';
 
 function App() {
   return (
@@ -76,6 +77,9 @@ function App() {
                             Learn More About Me:
                           </Typography>
 
+                          <ListEntryComponent listItemText={'Online Resume'} url='https://resume.bensoer.com' testDomain='resume.bensoer.com'>
+                            <ArticleIcon/>
+                          </ListEntryComponent>
                           <ListEntryComponent listItemText={'LinkedIn'} url='https://www.linkedin.com/in/ben-soer-24a541b0'>
                             <LinkedInIcon/>
                           </ListEntryComponent>
@@ -97,6 +101,8 @@ function App() {
                           <ListEntryComponent listItemText={'Mountain Adventure House Wiki'} url='https://mac.projectterris.com' testDomain='mac.projectterris.com'>
                             <ExploreIcon/>
                           </ListEntryComponent>
+
+                          
                           
                         </Stack>
                       </Container>
