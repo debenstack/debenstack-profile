@@ -1,3 +1,4 @@
+{{- if .Values.ingress.certificate.enabled }}
 apiVersion: cert-manager.io/v1
 kind: Certificate
 metadata:
@@ -10,3 +11,4 @@ spec:
   issuerRef:
     name: {{ .Values.ingress.certificate.issuer | default "letsencrypt-dev-cluster-issuer" }}
     kind: ClusterIssuer
+{{- end }}
