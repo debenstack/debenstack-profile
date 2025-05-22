@@ -31,9 +31,6 @@ podLabels: {}
 podSecurityContext:
   runAsUser: 1000
   readOnlyRootFilesystem: true
-  allowedHostPaths:
-    - pathPrefix: /usr/share/nginx/html
-      readOnly: true
   # fsGroup: 2000
 
 # Specific to the pod
