@@ -30,7 +30,6 @@ podLabels: {}
 # Specify for all pods in this deployment
 podSecurityContext:
   runAsUser: 1000
-  readOnlyRootFilesystem: true
   # fsGroup: 2000
 
 # Specific to the pod
@@ -40,6 +39,7 @@ securityContext:
   #   drop:
   #   - ALL
   allowPrivilegeEscalation: false
+  readOnlyRootFilesystem: true
   runAsNonRoot: true
   runAsUser: 2000
 
