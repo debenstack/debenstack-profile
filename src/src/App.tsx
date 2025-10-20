@@ -15,6 +15,7 @@ import ResponsiveAvatarComponent from './components/ResponsiveAvatarComponent';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { BsMedium } from 'react-icons/bs';
 import ArticleIcon from '@mui/icons-material/Article';
+import AppsIcon from '@mui/icons-material/Apps';
 
 function App() {
   return (
@@ -86,6 +87,9 @@ function App() {
                           <ListEntryComponent listItemText={'Github'} url='https://github.com/bensoer'>
                             <GitHubIcon/>
                           </ListEntryComponent>
+                          <ListEntryComponent listItemText={'Project Portfolio'} url='https://portfolio.bensoer.com' testDomain='portfolio.bensoer.com'>
+                            <AppsIcon/>
+                          </ListEntryComponent>
                           <ListEntryComponent listItemText={'Technical Blog'}  url='https://blog.bensoer.com' testDomain='blog.bensoer.com'>
                             <BookIcon/>
                           </ListEntryComponent>
@@ -98,7 +102,7 @@ function App() {
                           <ListEntryComponent listItemText={'Photography Portfolio'} url='https://photos.bensoer.com' testDomain='photos.bensoer.com'>
                             <PhotoCameraIcon/>
                           </ListEntryComponent>
-                          <ListEntryComponent listItemText={'Mountain Adventure House Wiki'} url='https://mac.projectterris.com' testDomain='mac.projectterris.com'>
+                          <ListEntryComponent listItemText={'Mountain Adventure House Wiki'} url='https://mah.projectterris.com' testDomain='mah.projectterris.com'>
                             <ExploreIcon/>
                           </ListEntryComponent>
 
