@@ -92,6 +92,7 @@ export default class ListEntryComponent extends React.Component<React.PropsWithC
                     onMouseOver={this.handleOnMouseEnter} 
                     onMouseLeave={this.handleOnMouseLeave} 
                     onClick={this.handleOnClick}
+                    sx={{ cursor: 'pointer'}}
                 >
                     <List>
                         <ListItem secondaryAction={this.state.secondaryAction}>

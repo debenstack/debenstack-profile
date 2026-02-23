@@ -16,6 +16,7 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import { BsMedium } from 'react-icons/bs';
 import ArticleIcon from '@mui/icons-material/Article';
 import AppsIcon from '@mui/icons-material/Apps';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
 
 function App() {
   return (
@@ -55,7 +56,13 @@ function App() {
                               <ContactEntryComponent text='604.842.2274'>
                                 <TagIcon color='action' /> 
                               </ContactEntryComponent>
+                              <ContactEntryComponent text='Public Keys' url='https://soernet.ca'>
+                                <FingerprintIcon /> 
+                              </ContactEntryComponent>
                             </ContactSectionComponent>
+
+
+                            
 
                         </Stack>
                       </Container>
